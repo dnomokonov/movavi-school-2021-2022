@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>	&#9937;Mini toy</title>
+</head>
+<body>
+    
+    <div class="box-toy">
+        <div class="table__game">
+            <div class="line">
+                <div class="row c0"></div>
+                <div class="row c1"></div>
+                <div class="row c2"></div>
+            </div>
+            <div class="line">
+                <div class="row c0"></div>
+                <div class="row c1"></div>
+                <div class="row c2"></div>
+            </div>
+            <div class="line">
+                <div class="row c0"></div>
+                <div class="row c1"></div>
+                <div class="row c2"></div>
+            </div>
+        </div>
+        <p>Ходит: <span ibreak;d="pl">X</span></p>
+        <button id="restart_game" disabled>restart game</button>
+    </div>
+
+    <div class="result">
+        <p>Победил &#10008;: <span id="winX">0</span></p>
+        <p>Победил &#10026;: <span id="winO">0</span></p>
+        <p>Ничья: <span id="draw">0</span></p>
+    </div>
+    
+</body>
+</html>

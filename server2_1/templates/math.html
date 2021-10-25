@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="box__math">
+        <form action="/math1" method="get">
+            <input type="text" placeholder="первое значение" name="mean1">
+            <input type="text" placeholder="второе значение" name="mean2">
+            <button type="submit">Отправка</button>
+        </form>
+    </div>
+
+    <div class="box__country">
+        <form action="/country" method="get">
+            <input type="text" placeholder="Страна" name="nameCount">
+            <button type="submit">Отправка</button>
+        </form>
+    </div>
+
+    <div class="box__color">
+        <form action="/colorbox" method="get">
+            <span><input type="checkbox" name="color" value="red">Красный</span>
+            <span><input type="checkbox" name="color" value="green">Зеленый</span>
+            <span><input type="checkbox" name="color" value="black">Черный</span>
+            <button type="submit">Отправка</button>
+        </form>
+    </div>
+
+</body>
+</html>
