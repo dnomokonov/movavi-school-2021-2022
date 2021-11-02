@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>home</title>
+
+</head>
+<body>
+    <div class="box__top__user">
+    {{#profil}}
+        {{#each info}}
+            <div class="top__users">
+                <h1><a href="/user/{{username}}">{{username}}</a></h1>
+                {{#if avatar}}
+                    <img src="{{avatar}}" alt="">
+                {{else}}
+                    <img src="" alt="">
+                {{/if}}
+                <div class="info__user">
+                    <h3>money: {{money}}</h3>
+                    <h3>level: {{level}}</h3>
+                    <h3><a href="">items: {{inventory}}</a></h3>
+                </div>
+            </div>     
+        {{/each}}
+    {{/profil}}
+    </div>
+
+    <div class="all_users">
+        <button><a href="/users">Список всех пользователей</a></button>
+    </div>
+
+</body>
+</html>

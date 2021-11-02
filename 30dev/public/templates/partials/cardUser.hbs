@@ -1,0 +1,15 @@
+<div class="user__box">
+    {{#getUser}}
+        {{#each data}}
+        <div class="person">
+            <h1>{{name}}</h1>
+            {{#if avatar}}
+                    <img src="{{avatar}}" alt="">
+            {{else}}
+                    <img src="" alt="">
+            {{/if}}
+            <h3>level: {{level}}</h3>
+        </div>
+        {{/each}}
+    {{/getUser}}
+</div>

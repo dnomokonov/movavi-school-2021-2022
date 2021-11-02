@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <title>Users</title>
+</head>
+<body>
+    <div class="all__users__list">
+        {{#users}}
+            {{#each infoUsers}}
+            <div class="user__div">
+            <div class="user">
+                <h1><a href="/user/{{username}}">{{username}}</a></h1>
+                {{#if avatar}}
+                    <img src="{{avatar}}" alt="">
+                {{else}}
+                    <img src="" alt="">
+               all_users {{/if}}
+                <div class="info__user">
+                    <h3>money: {{money}}</h3>
+                    <h3>level: {{level}}</h3>
+                    <h3><a href="">items: {{inventory}}</a></h3>
+                </div>
+            </div>
+            </div>
+            {{/each}}
+        {{/users}}
+    </div>  
+</body>
+</html>

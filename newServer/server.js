@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
-const hbs = require('handlebars');
-const port = 8080;
+const hbs = require('hbs');
+const port = 2000;
 
 app.set('view engine', 'hbs');
 app.set('views', './templates/public');
 
 app.use(express.static(__dirname + '/templates/public'));
+hbs.registerPartials(__dirname + '/templates/public/partials')
+
+
 //hbs.registerPartial(__dirname + ('/templates/public/partials'));
 //hbs.registerPartial(__dirname + ('/templates/public/partials'), '{{header}}');
 //hbs.registerPartial(__dirname + ('/templates/public/partials'), '{{footer}}');
