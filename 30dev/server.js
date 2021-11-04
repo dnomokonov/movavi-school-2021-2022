@@ -17,21 +17,21 @@ let usertop = {
             avatar: '/image/lt1.jpg',
             money: 15000,
             level: 20,
-            inventory: 25
+            inventory: 5
         },
         {
-            username: 'akki',
+            username: 'Akki',
             avatar: '/image/lt2.jpg',
             money: 11320,
             level: 18,
-            inventory: 19
+            inventory: 3
         },
         {
             username: 'da4a',
             avatar: '/image/lt3.jpg',
             money: 4200,
             level: 10,
-            inventory: 15
+            inventory: 2
         }
     ]
     }]
@@ -44,42 +44,42 @@ let allUsers = {
             avatar: '/image/lt3.jpg',
             money: 4200,
             level: 10,
-            inventory: 15
+            inventory: 2
         },
         {
             username: 'Akki',
             avatar: '/image/lt2.jpg',
-            money: 4200,
-            level: 10,
-            inventory: 15
+            money: 11320,
+            level: 18,
+            inventory: 3
         },
         {
             username: 'toxic',
             avatar: '/image/lt1.jpg',
-            money: 4200,
-            level: 10,
-            inventory: 15
+            money: 15000,
+            level: 20,
+            inventory: 5
         },
         {
             username: 'Lemon4ik',
             avatar: '/image/lt4.jpg',
-            money: 4200,
+            money: 43200,
             level: 10,
-            inventory: 15
+            inventory: 1
         },
         {
             username: 'Haker',
             avatar: '/image/lt10.jpg',
-            money: 4200,
-            level: 10,
-            inventory: 15
+            money: 410,
+            level: 3,
+            inventory: 0
         },
         {
             username: 'Joker',
             avatar: '/image/lt11.jpg',
-            money: 4200,
-            level: 10,
-            inventory: 15
+            money: 1200,
+            level: 1,
+            inventory: 3
         },
     ]
     }]
@@ -93,7 +93,7 @@ app.get('/users', (req, res) =>{
     res.render('users.hbs', allUsers);
 });
 
-function addNameUserArray(){
+function findUserByName(){
     let ordersName = [];
     let lengthArray = allUsers.users[0].infoUsers.length;
     for (let i = 0; i < lengthArray; i++){
@@ -104,7 +104,7 @@ function addNameUserArray(){
 
 app.get('/user/:nickname', (req, res) =>{
     let usernameclick = req.params['nickname'];
-    let ordersName = addNameUserArray();
+    let ordersName = findUserByName();
     let pos = ordersName.findIndex(i => i == usernameclick);
     let infoUser = {
         getUser: [{
@@ -119,6 +119,10 @@ app.get('/user/:nickname', (req, res) =>{
         title: usernameclick
     };
     res.render('userpage.hbs', infoUser);
+});
+
+app.get('/user/:nickname/inventory', (req, res) => {
+    res.render('inventory.hbs');
 })
 
 app.listen(port, () => {
