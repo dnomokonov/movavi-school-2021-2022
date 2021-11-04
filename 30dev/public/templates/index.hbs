@@ -12,7 +12,9 @@
 </head>
 <body>
     <div class="box__top__user">
+        <h1>Топ пользователей</h1>
     {{#profil}}
+        <div class="flx-bx">
         {{#each info}}
             <div class="top__users">
                 <h1><a href="/user/{{username}}">{{username}}</a></h1>
@@ -28,11 +30,12 @@
                 </div>
             </div>     
         {{/each}}
+        </div>
     {{/profil}}
     </div>
 
     <div class="all_users">
-        <button><a href="/users">Список всех пользователей</a></button>
+        <a href="/users"><input type="button" value="Список всех пользователей"></a>
     </div>
 
 </body>

@@ -4,11 +4,15 @@
         <div class="person">
             <h1>{{name}}</h1>
             {{#if avatar}}
-                    <img src="{{avatar}}" alt="">
+            <img src="{{avatar}}" alt="">
             {{else}}
-                    <img src="" alt="">
+            <img src="" alt="">
             {{/if}}
-            <h3>level: {{level}}</h3>
+            <div class="text">
+            <h3>Level: {{level}}</h3>
+            <h3>Money: {{money}}</h3>
+            <h3>Inventory: {{inventory}}</h3>
+            </div>
         </div>
         {{/each}}
     {{/getUser}}

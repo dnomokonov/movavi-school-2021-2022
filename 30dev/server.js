@@ -93,15 +93,27 @@ app.get('/users', (req, res) =>{
     res.render('users.hbs', allUsers);
 });
 
+function addNameUserArray(){
+    let ordersName = [];
+    let lengthArray = allUsers.users[0].infoUsers.length;
+    for (let i = 0; i < lengthArray; i++){
+        ordersName.push(allUsers.users[0].infoUsers[i].username);
+    }
+    return ordersName;
+}
+
 app.get('/user/:nickname', (req, res) =>{
     let usernameclick = req.params['nickname'];
+    let ordersName = addNameUserArray();
+    let pos = ordersName.findIndex(i => i == usernameclick);
     let infoUser = {
         getUser: [{
             data : [{
                 name : usernameclick,
-                avatar: '',
-                level: '',
-                inventory: ''
+                avatar: allUsers.users[0].infoUsers[pos].avatar,
+                level: allUsers.users[0].infoUsers[pos].level,   
+                money : allUsers.users[0].infoUsers[pos].money,
+                inventory: allUsers.users[0].infoUsers[pos].inventory
             }]
         }],
         title: usernameclick
