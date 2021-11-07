@@ -109,7 +109,7 @@ app.get('/user/:nickname', (req, res) =>{
     let infoUser = {
         getUser: [{
             data : [{
-                name : usernameclick,
+                username : usernameclick,
                 avatar: allUsers.users[0].infoUsers[pos].avatar,
                 level: allUsers.users[0].infoUsers[pos].level,   
                 money : allUsers.users[0].infoUsers[pos].money,
@@ -121,8 +121,41 @@ app.get('/user/:nickname', (req, res) =>{
     res.render('userpage.hbs', infoUser);
 });
 
+let userInventory = {
+    da4a: {
+        img : ['/image/ak47.png', '/image/m4a4.png'],
+        desc: ['ak-47', 'm4a4-s'],
+        cost: [2000, 3500],
+    },
+    toxic: {
+        img : '',
+        desc: '',
+        cost: '',
+    },
+    Akki:{
+        img : '',
+        desc: '',
+        cost: '',
+    },
+    Lemon4ik: {
+        img : '',
+        desc: '',
+        cost: '',
+    },
+    Haker: {
+        img : '',
+        desc: '',
+        cost: '',
+    },
+    Joker: {
+        img : '',
+        desc: '',
+        cost: '',
+    }
+}
+
 app.get('/user/:nickname/inventory', (req, res) => {
-    res.render('inventory.hbs');
+    res.render('inventory.hbs', userInventory);
 })
 
 app.listen(port, () => {
